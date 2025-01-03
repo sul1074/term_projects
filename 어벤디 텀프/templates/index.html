@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-22F Controller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #007bff;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            margin: 20px 0;
+        }
+        .camera-container, .controller {
+            margin: 20px;
+        }
+        canvas {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            touch-action: none; /* Disable touch scrolling for the canvas */
+        }
+        .buttons {
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 5px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>T-22F Controller</h1>
+
+    <!-- 카메라 스트리밍 -->
+    <div class="camera-container">
+        <h2>Live Camera Feed</h2>
+        <img src="/video_feed" alt="Live Camera Feed">
+    </div>
+
+    <!-- 조이스틱 컨트롤러 -->
+    <div class="controller">
+        <h2>Joystick Controller</h2>
+        <canvas id="joystick" width="300" height="300"></canvas>
+    </div>
+
+    <!-- 물 펌프 및 LED 제어 버튼 -->
+    <div class="buttons">
+        <h2>Toggle Buttons</h2>
+        <!-- LED 및 물 펌프 토글 -->
+        <button class="button" onclick="sendCommand('x')">Toggle LED</button>
+        <button class="button" onclick="sendCommand('t')">Toggle Water Pump</button>
+    </div>
+
+    <script>
+        const canvas = document.getElementById("joystick");
+        const ctx = canvas.getContext("2d");
+
+        // 조이스틱 기본 설정
+        const joystickCenter = { x: canvas.width / 2, y: canvas.height / 2 };
+        const joystickRadius = 100; // 조이스틱 기본 반경
+        const knobRadius = 40; // 조이스틱 손잡이 반경
+        let knobPosition = { ...joystickCenter }; // 조이스틱 손잡이 위치
+        let isDragging = false;
+
+        // 조이스틱 그리기 함수
+        function drawJoystick() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // 조이스틱 바탕
+            ctx.beginPath();
+            ctx.arc(joystickCenter.x, joystickCenter.y, joystickRadius, 0, Math.PI * 2);
+            ctx.fillStyle = "#ddd";
+            ctx.fill();
+            ctx.stroke();
+
+            // 조이스틱 손잡이
+            ctx.beginPath();
+            ctx.arc(knobPosition.x, knobPosition.y, knobRadius, 0, Math.PI * 2);
+            ctx.fillStyle = "#007bff";
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        // 벡터 방향 계산
+        function getDirection(dx, dy) {
+            const magnitude = Math.sqrt(dx ** 2 + dy ** 2);
+            if (magnitude < 10) return 'h'; // 중심에서 너무 가까우면 정지 명령
+
+            const angle = Math.atan2(dy, dx) * (180 / Math.PI); // 라디안을 각도로 변환
+
+            if (angle >= -45 && angle <= 45) return 'd';   // 오른쪽
+            if (angle > 45 && angle <= 135) return 's';    // 아래쪽
+            if (angle < -45 && angle >= -135) return 'w';  // 위쪽
+            if (angle > 135 || angle <= -135) return 'a';  // 왼쪽
+        }
+
+        // 서버에 명령 전송
+        async function sendCommand(command) {
+            console.log(command); // 명령 항상 로그 출력
+
+            try {
+                const response = await fetch('/command', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ command })
+                });
+                const result = await response.json();
+                console.log(result.message);
+            } catch (error) {
+                console.error("Error sending command: " + error.message);
+            }
+        }
+
+        // 조이스틱 이동
+        function onMove(event) {
+            if (!isDragging) return;
+
+            const rect = canvas.getBoundingClientRect();
+            const touch = event.touches ? event.touches[0] : event;
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+
+            const dx = x - joystickCenter.x;
+            const dy = y - joystickCenter.y;
+            const distance = Math.sqrt(dx ** 2 + dy ** 2);
+
+            // 조이스틱 범위 제한
+            if (distance > joystickRadius) {
+                const angle = Math.atan2(dy, dx);
+                knobPosition.x = joystickCenter.x + joystickRadius * Math.cos(angle);
+                knobPosition.y = joystickCenter.y + joystickRadius * Math.sin(angle);
+            } else {
+                knobPosition.x = x;
+                knobPosition.y = y;
+            }
+
+            // 방향 계산 및 명령 전송
+            const direction = getDirection(dx, dy);
+            sendCommand(direction);
+
+            drawJoystick();
+        }
+
+        // 조이스틱 복귀
+        function resetJoystick() {
+            isDragging = false;
+            knobPosition = { ...joystickCenter };
+            sendCommand('h');
+            drawJoystick();
+        }
+
+        // 이벤트 리스너 추가
+        canvas.addEventListener("mousedown", () => isDragging = true);
+        canvas.addEventListener("touchstart", () => isDragging = true);
+
+        canvas.addEventListener("mousemove", onMove);
+        canvas.addEventListener("touchmove", onMove);
+
+        canvas.addEventListener("mouseup", resetJoystick);
+        canvas.addEventListener("touchend", resetJoystick);
+        canvas.addEventListener("mouseleave", resetJoystick); // 마우스가 벗어날 때
+        canvas.addEventListener("touchcancel", resetJoystick); // 터치 취소 시
+
+        // 초기 그리기
+        drawJoystick();
+    </script>
+</body>
+</html>
