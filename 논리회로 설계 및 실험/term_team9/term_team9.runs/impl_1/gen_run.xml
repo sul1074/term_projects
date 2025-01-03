@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7s75fgga484-1" LaunchTime="1734846285">
+  <File Type="BITSTR-BMM" Name="week11_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="week11_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="week11_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="week11_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="week11.tcl"/>
+  <File Type="OPT-TIMING" Name="week11_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="week11_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="week11_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="week11_reports.tcl"/>
+  <File Type="OPT-DRC" Name="week11_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="week11.hwdef"/>
+  <File Type="PWROPT-DCP" Name="week11_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="week11_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="week11_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="week11_placed.dcp"/>
+  <File Type="PLACE-IO" Name="week11_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="week11_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="week11_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="week11_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="week11_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="week11_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="week11_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="week11_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="week11_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="week11.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="week11_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="week11_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="week11_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="week11.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="week11_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="week11_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="week11_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="week11_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="week11_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="week11_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="week11_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="week11.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="week11_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="week11_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="week11_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="week11_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="week11_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="week11_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="week11_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="week11_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="week11_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="week11_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="week11_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="week11_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="week11_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="week11_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="week11_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="week11_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="week11_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="week11_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="week11_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="week11_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="week11_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="week11.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="week11_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="week11.rbt"/>
+  <File Type="BITSTR-NKY" Name="week11.nky"/>
+  <File Type="PDI-FILE" Name="week11.pdi"/>
+  <File Type="RCFI_FILE" Name="week11.rcfi"/>
+  <File Type="CFI_FILE" Name="week11.cfi"/>
+  <File Type="RNPI_FILE" Name="week11.rnpi"/>
+  <File Type="NPI_FILE" Name="week11.npi"/>
+  <File Type="RBD_FILE" Name="week11.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="week11.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="week11.sysdef"/>
+  <File Type="BG-BGN" Name="week11.bgn"/>
+  <File Type="BG-DRC" Name="week11.drc"/>
+  <File Type="RDI-RDI" Name="week11.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../../term_code/LED.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../term_code/PNU_CLK_DIV.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../term_code/Password.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../term_code/b2seg_bus.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../term_code/count_8.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../term_code/d2b.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../term_code/display_controller.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../term_code/eight_digit_shift_register.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../term_code/four_bit_reg_ce.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../term_code/score_calculator.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../term_code/simon.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../term_code/single_seg_decoder.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../term_code/timer.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../term_code/trigger.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../term_code/week11.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="week11"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/term_team9.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/term_team9.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

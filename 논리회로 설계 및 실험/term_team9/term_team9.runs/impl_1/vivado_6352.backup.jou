@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Dec 22 14:44:53 2024
+# Process ID: 6352
+# Current directory: C:/Users/sul10/term_team9/term_team9.runs/impl_1
+# Command line: vivado.exe -log week11.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source week11.tcl -notrace
+# Log file: C:/Users/sul10/term_team9/term_team9.runs/impl_1/week11.vdi
+# Journal file: C:/Users/sul10/term_team9/term_team9.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source week11.tcl -notrace
