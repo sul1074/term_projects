@@ -1,12 +1,14 @@
 # A RISC-based Single Cycle Processor designed using Logism
 
-### This processor can only execute a limited subset of instructions based on the given opcode decoder.    The supported instruction types are:
-- R-type (33): Arithmetic and logical operations (e.g., add, sub, and, or, xor).
-- I-type (13): Immediate operations (e.g., addi, andi, ori).
-- Load (lw, 03): Loading data from memory.
-- Store (sw, 23): Storing data into memory.
-- Branch (63): Conditional branching (e.g., beq, bne).
-- Jump (jal, 6F): Unconditional jump and link.
+This processor supports a limited subset of RISC-V instructions. The supported instruction types and their opcodes are:  
+
+### ✅ Supported Instruction Types  
+- **R-type (`0x33`)**: Arithmetic and logical operations (`add`, `sub`, `and`, `or`, `xor`).  
+- **I-type (`0x13`)**: Immediate operations (`addi`, `andi`, `ori`).  
+- **Load (`lw`, `0x03`)**: Load word from memory.  
+- **Store (`sw`, `0x23`)**: Store word into memory.  
+- **Branch (`0x63`)**: Conditional branching (`beq`, `bne`).  
+- **Jump (`jal`, `0x6F`)**: Unconditional jump and link.  
 
 ### Circuit diagram
 ![image](https://github.com/user-attachments/assets/ae8e790c-fb8a-4b1f-8605-0f150c0be12f)
