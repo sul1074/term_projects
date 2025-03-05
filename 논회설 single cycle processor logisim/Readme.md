@@ -1,6 +1,6 @@
 # A RISC-based Single Cycle Processor designed using Logism
 
-### This processor can only execute a limited subset of instructions based on the given opcode decoder
+### This processor can only execute a limited subset of instructions based on the given opcode decoder.  
 The supported instruction types are:
 - R-type (33): Arithmetic and logical operations (e.g., add, sub, and, or, xor).
 - I-type (13): Immediate operations (e.g., addi, andi, ori).
